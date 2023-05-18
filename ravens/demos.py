@@ -104,7 +104,7 @@ def main(unused_argv):
       n_steps = 5000
       os.makedirs(dataset.path, exist_ok=True)
       NGP_PATH = './orthographic-ngp'
-      cmd = f'python {NGP_PATH}/scripts/run.py --mode nerf \
+      cmd = f'python3 {NGP_PATH}/scripts/run.py --mode nerf \
               --scene {nerf_dataset_path} \
               --width 160 --height 320 --n_steps {n_steps} \
               --screenshot_transforms {nerf_dataset_path}/test/transforms_test.json \
