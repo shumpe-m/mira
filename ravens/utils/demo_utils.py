@@ -45,7 +45,7 @@ def write_nerf_data(path, env, act, t=0.3):
       # Translation.
       normal = c2w[:3, :3] @ np.array([0, 0, 1])
       ray = -1 * normal
-      t = 0.3
+      t = 1.0
       cam_center = look_at + ray * t
       c2w[:3, -1] = cam_center
       c2w = utils.convert_pose(c2w)

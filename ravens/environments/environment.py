@@ -227,6 +227,9 @@ class Environment(gym.Env):
     joints = [p.getJointInfo(self.ur5, i) for i in range(n_joints)]
     self.joints = [j[0] for j in joints if j[2] == p.JOINT_REVOLUTE]
 
+    for i in range(n_joints):
+      p.changeVisualShape(self.ur5, i, rgbaColor=[0, 0, 0, 0])
+
     # Move robot to home joint configuration.
     for i in range(len(self.joints)):
       p.resetJointState(self.ur5, self.joints[i], self.homej[i])
